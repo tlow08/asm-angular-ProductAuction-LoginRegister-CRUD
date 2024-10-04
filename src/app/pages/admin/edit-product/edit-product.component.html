@@ -1,0 +1,62 @@
+<p>edit-product works!</p>
+<div class="container">
+  <form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" formControlName="title">
+      <p *ngIf="title?.touched && title?.hasError('required')" class="text-danger">Không được bỏ trống</p>
+      <p *ngIf="title?.touched && title?.hasError('minlength')" class="text-danger">Tối thiểu 6 kí tự</p>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <input type="text" class="form-control" formControlName="description">
+      <p *ngIf="description?.touched && description?.hasError('required')" class="text-danger">Không được bỏ trống</p>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" class="form-control" formControlName="price">
+      <p *ngIf="price?.touched && price?.hasError('required')" class="text-danger">Không được bỏ trống</p>
+      <p *ngIf="price?.touched && price?.hasError('min')" class="text-danger">Nhập số không âm và > 1</p>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Link image</label>
+      <input type="text" class="form-control" formControlName="image">
+      <p *ngIf="image?.touched && image?.hasError('required')" class="text-danger">Không được bỏ trống</p>
+    </div>
+
+    <div class="mb-3 grid grid-cols-1">
+      <label class="form-label">Category</label>
+      <select class="form-select border rounded-md p-2" formControlName="category">
+        <option value="" selected>Choose a category...</option>
+        <option *ngFor="let category of categories" [value]="category._id">{{ category.title }}</option>
+      </select>
+      <p *ngIf="category?.touched && category?.hasError('required')" class="text-danger">Không được bỏ trống</p>
+    </div>
+
+    <!-- Auction fields -->
+    <div class="mb-3">
+      <label class="form-label">Start Time</label>
+      <input type="datetime-local" class="form-control" formControlName="startAt">
+      <p *ngIf="startAt?.touched && startAt?.hasError('required')" class="text-danger">Không được bỏ trống</p>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">End Time</label>
+      <input type="datetime-local" class="form-control" formControlName="endAt">
+      <p *ngIf="endAt?.touched && endAt?.hasError('required')" class="text-danger">Không được bỏ trống</p>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Current Bid Price</label>
+      <input type="number" class="form-control" formControlName="currentBidPrice">
+      <p *ngIf="currentBidPrice?.touched && currentBidPrice?.hasError('min')" class="text-danger">Nhập số không âm</p>
+    </div>
+
+    <div class="mb-3">
+      <button class="btn btn-primary w-100">Submit</button>
+    </div>
+  </form>
+</div>

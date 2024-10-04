@@ -1,0 +1,40 @@
+<div class="container">
+    <h1 class="text-center my-4">Admin Product List</h1>
+    <a routerLink="/admin/product/add"><button class="btn btn-primary">Add product</button></a>
+    <table class="table table-striped mt-4">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Price</th>
+          <th scope="col">Image</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of products; track product._id) {
+        <tr>
+          <th scope="row">{{ product._id }}</th>
+          <td>{{ product.title }}</td>
+          <td>{{ product.price }}</td>
+          <td><img [src]="product.image" alt="" width="80" /></td>
+          <td>
+            <div class="flex gap-2">
+              <button
+              (click)="handleRemoveProduct(product._id)"
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+            <a [routerLink]="['/admin/product/edit', product._id]"><button class="btn btn-warning">Edit</button></a>
+            <a [routerLink]="['/admin/product/bid', product._id]"><button class="btn btn-info">Auction</button></a>
+            </div>
+          </td>
+        </tr>
+        } @empty {
+        <li>There are no products.</li>
+        }
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="text-center text-2xl font-semibold">Register</h1>
+    <form class="max-w-screen-md m-auto h-lvh" [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          formControlName="email"
+        />
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+          <span *ngIf="registerForm.get('email')?.errors?.['required']" style="color:red;">Email is required!</span>
+          <span *ngIf="registerForm.get('email')?.errors?.['email']" style="color:red;">Invalid email format!</span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" />
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+          <span *ngIf="registerForm.get('password')?.errors?.['required']" style="color:red;">Password is required!</span>
+          <span *ngIf="registerForm.get('password')?.errors?.['minlength']" style="color:red;">Password must be at least 6 characters long!</span>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-dark w-full">Submit</button>
+    </form>
+  </div>
+  

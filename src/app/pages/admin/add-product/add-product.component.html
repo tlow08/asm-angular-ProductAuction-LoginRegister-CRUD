@@ -1,0 +1,53 @@
+<p>product-add works!</p>
+<div class="container">
+    <form action="" [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+        <div class="mb-3">
+            <label for="" class="form-label">Title</label>
+            <input type="text" class="form-control" formControlName="title">
+            @if(title?.touched && title?.hasError('required')){
+                <p class="text-danger">Không được bỏ trống</p>
+            }
+            @if(title?.touched && title?.hasError('minlength')){
+                <p class="text-danger">Tối thiểu 6 kí tự</p>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Description</label>
+            <input type="text" class="form-control" formControlName="description">
+            @if(description?.touched && description?.hasError('required')){
+                <p class="text-danger">Không được bỏ trống</p>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Price</label>
+            <input type="number" class="form-control" formControlName="price">
+            @if(price?.touched && price?.hasError('required')){
+                <p class="text-danger">Không được bỏ trống</p>
+            }
+            @if(price?.touched && price?.hasError('min')){
+                <p class="text-danger">Nhập số không âm và > 1</p>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Link image</label>
+            <input type="text" class="form-control" formControlName="image">
+            @if(image?.touched && image?.hasError('required')){
+                <p class="text-danger">Không được bỏ trống</p>
+            }
+        </div>
+        <div class="mb-3 grid grid-cols-1">
+            <label for="" class="form-label">Category</label>
+            <select class="form-select border rounded-md p-2" aria-label="Default select example" formControlName="category">
+                <option value="" selected>Choose a category...</option>
+                <option *ngFor="let category of categories" [value]="category._id">{{ category.title }}</option>
+            </select>
+            @if(category?.touched && category?.hasError('required')){
+                <p class="text-danger">Không được bỏ trống</p>
+            }
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary w-100">Submit</button>
+        </div>
+        
+    </form>
+</div>

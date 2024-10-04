@@ -1,0 +1,25 @@
+@if(product){
+    <div class="max-w-screen-2xl m-auto grid grid-cols-2 gap-8">
+        <div class="flex justify-center items-center">
+            <img  [src]="product.image" class="w-[60%]" alt="">
+        </div>
+        <div >
+            <h2 class="text-2xl font-semibold">{{product.title}}</h2>
+            <h4 class="text-xl text-red-600 font-semibold">$ {{product.price}}</h4>
+            <p>{{product.description}}</p>
+            <button class="btn btn-danger">Mua</button>
+        </div>
+    </div>
+    <div  class="max-w-screen-2xl m-auto ">
+        <h4>Thoi gian bat dau: {{product.startAt}}</h4>
+        <h4>Thoi gian ket thuc: {{product.endAt}}</h4>
+        <h4>Gia khoi diem: {{product.currentBidPrice}}</h4>
+        <form action="">
+            <label for="">gia tham gia:</label>
+            <input type="number" name="" id="">
+            <button type="submit">Bid</button>
+        </form>
+    </div>
+}@else {
+    <p>Product not found</p>
+}

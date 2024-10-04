@@ -1,0 +1,33 @@
+<div class="container ">
+    <h1 class="text-center text-2xl font-semibold">Login</h1>
+    <form class="max-w-screen-md m-auto h-lvh" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          formControlName="email"
+        />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <span *ngIf="loginForm.get('email')?.errors?.['required']" style="color:red;">Email is required!</span>
+          <span *ngIf="loginForm.get('email')?.errors?.['email']" style="color:red;">Invalid email format!</span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          formControlName="password"
+        />
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <span *ngIf="loginForm.get('password')?.errors?.['required']" style="color:red;">Password is required!</span>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-dark w-full">Submit</button>
+    </form>
+  </div>
+  

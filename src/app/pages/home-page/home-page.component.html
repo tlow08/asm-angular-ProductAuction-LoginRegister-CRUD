@@ -1,0 +1,25 @@
+<main class="max-w-screen-2xl m-auto grid grid-cols-8 gap-8">
+    <div class="col-span-2">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+    </div>
+    <div class="col-span-6 grid grid-cols-4 gap-8">
+      <div *ngFor="let product of products; trackBy: trackById" class="" >
+       <div class="w-full"> <img [src]="product.image" class="card-img-top w-full" alt="Product image"></div>
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text">Price: {{ product.price }} VND</p>
+          <p class="card-text">Brand: {{ product.category }}</p>
+          <a [routerLink]="['product', product._id]" class="btn btn-primary">Detail</a>
+        </div>
+      </div>
+      <p *ngIf="products.length === 0">There are no items.</p>
+    </div>
+  </main>
+  
