@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="text-center my-4">Admin Product List</h1>
+    <h1 class="text-center my-4 text-xl font-semibold">List of product</h1>
     <a routerLink="/admin/product/add"><button class="btn btn-primary">Add product</button></a>
     <table class="table table-striped mt-4">
       <thead>
@@ -27,7 +27,7 @@
               Delete
             </button>
             <a [routerLink]="['/admin/product/edit', product._id]"><button class="btn btn-warning">Edit</button></a>
-            <a [routerLink]="['/admin/product/bid', product._id]"><button class="btn btn-info">Auction</button></a>
+            <a [routerLink]="['/admin/product/bid-list/',product._id]"><button class="btn btn-info">Auction</button></a>
             </div>
           </td>
         </tr>

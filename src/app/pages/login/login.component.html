@@ -1,6 +1,6 @@
 <div class="container ">
-    <h1 class="text-center text-2xl font-semibold">Login</h1>
     <form class="max-w-screen-md m-auto h-lvh" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+    <h1 class="text-center text-3xl font-semibold text-red-600">Login</h1>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input
@@ -27,7 +27,9 @@
           <span *ngIf="loginForm.get('password')?.errors?.['required']" style="color:red;">Password is required!</span>
         </div>
       </div>
-      <button type="submit" class="btn btn-dark w-full">Submit</button>
+      <button type="submit" class="btn btn-danger w-full">Submit</button>
+      <div class="h-[10px]"></div>
+      <a routerLink="/register" class=" text-base font-semibold">Register?</a>
     </form>
   </div>
   

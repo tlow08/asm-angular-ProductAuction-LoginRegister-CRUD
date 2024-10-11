@@ -1,27 +1,58 @@
-<section class="max-w-screen-2xl m-auto flex justify-between py-3">
-    <div class="flex gap-[80px] items-center">
-     <div>
-         <img class="w-[150px]" src="https://tt03.mediawz.com/wp-content/uploads/2021/10/TT03.png" alt="">
-     </div>
-     <div>
-         <input class="border-2 border-black rounded-md h-[40px] w-[600px] pl-3" type="text" name="" id="" placeholder="Search...">
-     </div>
+<header class="bg-red-700">
+  <section class="max-w-screen-xl m-auto grid grid-cols-2">
+    <div class="flex justify-between items-center my-3">
+      <div>
+        <img
+          class="max-h-[40px] w-auto"
+          src="https://c6.mediawz.com/wp-content/uploads/2023/04/c6.png"
+          alt=""
+        />
+      </div>
+      <form action="" class="flex h-[40px]">
+        <input
+          class="w-[400px] outline-none pl-2"
+          type="text"
+          name=""
+          id=""
+          placeholder="Search..."
+        />
+        <button type="submit" class="bg-black w-[50px]">
+          <i class="bi bi-search text-white"></i>
+        </button>
+      </form>
     </div>
-    <div class="flex gap-3 text-xl font-medium items-center">
-         <div class="flex gap-2"><i class="bi bi-heart-fill"></i><p class="text-gray-500 text-base font-mono">Yeu thich</p></div>
-         <div class="flex gap-2"><i class="bi bi-bag-check-fill"></i><p class="text-gray-500 text-base font-mono">0d</p></div>
-         <div class="flex gap-2"><i class="bi bi-person-fill"></i><p class="text-gray-500 text-base font-mono">Tai khoan</p></div>
+    <div class="flex justify-end gap-3 items-center text-base text-white font-semibold">
+      <div class="text-center">
+        <i class="bi bi-file-earmark-easel-fill text-xl"></i>
+        <h3>Thông tin hay</h3>
+      </div>
+      <div class="text-center">
+        <i class="bi bi-journal-album text-xl"></i>
+        <h3>Chính sách mua hàng</h3>
+      </div>
+      <div class="text-center">
+        <i class="bi bi-person-rolodex text-xl"></i>
+        <a routerLink="/login" class="text-white no-underline" ><h3>Tài khoản của tôi</h3></a>
+       
+      </div>
+      <div class="text-center">
+        <i class="bi bi-cart2 text-xl"></i>
+        <h3>Giỏ hàng</h3>
+      </div>
     </div>
- </section>
- <div class="bg-black">
-     <nav class="max-w-screen-2xl m-auto flex justify-between p-2  text-white">
-         <div class="text-xl font-semibold flex items-center gap-4">
-            <a routerLink="/">Home</a>
-        
-            <a routerLink="/register">Register</a>
-          
-            <a routerLink="/login">Login</a>
-         </div>
-        </nav>
- </div>
- <div class="h-[32px]"></div>
+  </section>
+  <section class="bg-black">
+    <nav class="max-w-screen-xl m-auto flex justify-between p-2 text-white">
+      <div class="text-[18px] font-semibold flex items-center gap-4">
+        <a routerLink="/" class="flex gap-2 text-white"><i class="bi bi-phone-vibrate-fill"></i><p>ĐIỆN THOẠI</p></a>
+        <a routerLink="/" class="flex gap-2 text-white"><i class="bi bi-laptop"></i><p>LAPTOP</p></a>
+        <a routerLink="/" class="flex gap-2 text-white"><i class="bi bi-phone-fill"></i><p>MÁY TÍNH BẢNG</p></a>
+        <a routerLink="/" class="flex gap-2 text-white"><i class="bi bi-laptop"></i><p>LAPTOP</p></a>
+        <a routerLink="/" class="flex gap-2 text-white"><i class="bi bi-laptop"></i><p>LAPTOP</p></a>
+        <a routerLink="/" class="flex gap-2 text-white"><i class="bi bi-laptop"></i><p>LAPTOP</p></a>
+      </div>
+    </nav>
+  </section>
+</header>
+
+<div class="h-[32px]"></div>

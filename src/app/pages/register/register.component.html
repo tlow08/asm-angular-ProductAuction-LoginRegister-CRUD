@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="text-center text-2xl font-semibold">Register</h1>
+    <h1 class="text-center text-3xl font-semibold text-red-500">Register</h1>
     <form class="max-w-screen-md m-auto h-lvh" [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -23,7 +23,9 @@
           <span *ngIf="registerForm.get('password')?.errors?.['minlength']" style="color:red;">Password must be at least 6 characters long!</span>
         </div>
       </div>
-      <button type="submit" class="btn btn-dark w-full">Submit</button>
+      <button type="submit" class="btn btn-danger w-full">Submit</button>
+      <div class="h-[10px]"></div>
+      <a routerLink="/login" class=" text-base font-semibold">Login?</a>
     </form>
   </div>
   

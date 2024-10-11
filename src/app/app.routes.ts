@@ -30,7 +30,7 @@ export const routes: Routes = [
             {path: 'product/list', component: ListProductComponent},
             {path: 'product/add', component: AddProductComponent},
             {path: 'product/edit/:id', component: EditProductComponent},
-            {path: 'product/bid/:id', component: BidProductComponent}
+            { path: 'product/bid-list/:productId', component: BidProductComponent },
         ]
     }
 ];

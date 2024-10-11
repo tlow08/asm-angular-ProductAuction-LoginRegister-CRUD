@@ -47,7 +47,6 @@ export class EditProductComponent {
             image: data.data.image,
             category: data.data.category,
             
-            // Load auction-related fields
             startAt: data.data.startAt ? new Date(data.data.startAt).toISOString().slice(0, -1) : '',
             endAt: data.data.endAt ? new Date(data.data.endAt).toISOString().slice(0, -1) : '',
             currentBidPrice: data.data.currentBidPrice || 0,
